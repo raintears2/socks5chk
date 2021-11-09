@@ -13,11 +13,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-#Require
-#Python 2.6+ or Python 3.x
-#PySocks
-#argparse (required for Python 2.6)
-#win_inet_pton (required for running Python 2.6-3.3 on Windows)
+# Prerequisites:
+# Python 2.6+ or Python 3.x
+# PySocks
+# argparse (required for Python 2.6)
+# win_inet_pton (required for running Python 2.6-3.3 on Windows)
 
 
 from __future__ import print_function
