@@ -29,12 +29,14 @@ def test_udp(typ, addr, port, user=None, pwd=None):
         # Can be treated identical to a regular socket object
         # Raw DNS request
         req = b"\x12\x34\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00\x05\x62\x61\x69\x64\x75\x03\x63\x6f\x6d\x00\x00\x01\x00\x01"
+        s.settimeout(4)
         s.sendto(req, ("8.8.8.8", 53))
         (rsp, address)= s.recvfrom(4096)
         if rsp[0] == req[0] and rsp[1] == req[1]:
             print("UDP check passed")
         else:
             print("Invalid response")
+        s.settimeout(None)    
     except socket.error as e:
         print(repr(e))
     except socks.ProxyError as e:
